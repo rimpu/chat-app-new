@@ -19,3 +19,13 @@ jobs:
           projectId: chat-web-app-e2eed
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+      - name: Setup Node
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+ 
+      - name: Install dependencies
+        run: npm ci
+ 
+      - name: Build the app
+        run: npm run build
