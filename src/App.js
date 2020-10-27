@@ -6,9 +6,11 @@ import SignIn from './pages/SignIn';
 import PrivateRoute from './components/PrivateRoute';
 import Home from './pages/Home';
 import PublicRoute from './components/PublicRoute';
+import { ProfileContextProvider } from './context/profile.context';
 
 const App = () => {
   return (
+    <ProfileContextProvider>
     <Switch>
       <PublicRoute path="/signin" exact>
         <SignIn/>
@@ -17,7 +19,8 @@ const App = () => {
         <Home/>
       </PrivateRoute>
     </Switch>
-  )
+    </ProfileContextProvider>
+   )
 }
 
 export default App
