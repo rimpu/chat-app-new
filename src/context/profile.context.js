@@ -8,7 +8,7 @@ export const ProfileContextProvider = ({children}) => {
   const [isLoading,setIsLoading] = useState(true);
   useEffect(() => {
     let userRef ="";
-   const authUnsubscribe = auth.onAuthStateChanged(authObj =>{
+    const authUnsubscribe = auth.onAuthStateChanged(authObj =>{
      if(authObj){
       userRef = database.ref(`/profiles/${authObj.uid}`);
       userRef.on('value',(snapshot)=>{
