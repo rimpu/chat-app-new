@@ -1,7 +1,7 @@
 import React from 'react'
 import 'rsuite/dist/styles/rsuite-default.css';
 import './styles/main.scss'
-import {Switch} from "react-router-dom"
+import {Switch, Route} from "react-router-dom"
 import SignIn from './pages/SignIn';
 import PrivateRoute from './components/PrivateRoute';
 import Home from './pages/Home';
@@ -18,6 +18,9 @@ const App = () => {
       <PrivateRoute path="/" exact>
         <Home/>
       </PrivateRoute>
+      <Route>
+        404 Page not found
+      </Route>
     </Switch>
     </ProfileContextProvider>
    )

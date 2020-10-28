@@ -9,8 +9,8 @@ export function useModalState(defaultValue = false){
 
 export const useMediaQuery = query => {
   const [matches, setMatches] = useState(
-    () => window.matchMedia(query).matches
-  );
+    () => window.matchMedia(query).matches // a callback function
+   );
 
   useEffect(() => {
     const queryList = window.matchMedia(query);
